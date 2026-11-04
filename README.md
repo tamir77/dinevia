@@ -6,6 +6,10 @@ Read every dish. Find your favorites. Feel at home at any table.
 
 Local menu. Your language. Your preferences. Your currency.
 
+[Open Dinevia](https://dinevia-1opu.onrender.com) · [Watch the 2:34 demo](https://dinevia-1opu.onrender.com/demo/dinevia-demo.mp4)
+
+The homepage includes an accessible video player with English narration and optional English captions. The film is an edited walkthrough using actual app screens and an owned fictional menu.
+
 ## The product
 
 Dinevia turns a restaurant menu link or photograph into a clear text menu. Guests choose from English, German, Spanish, Italian, French, Chinese and Japanese. Dish descriptions and original prices stay together; the original remains available to show a waiter. “For you” adds explained taste suggestions without hiding prices. Approximate currency conversions come from published exchange rates. No guest account is required.
@@ -55,6 +59,8 @@ Tests cover menu cleanup, numeric preservation, currency conversion, language se
 ## Privacy and limitations
 
 The Meta key stays on the server. Uploaded menu content and supplied preferences are sent to Meta when needed for translation or suggestions. Guest menus use private session access. Do not upload confidential documents.
+
+Google Analytics measures page visits on the public deployment only. Menu contents, preferences, imported URLs, private menu identifiers and query strings are excluded from the pageview payload. Enhanced measurement is disabled, and browser Do Not Track is respected.
 
 OCR and translations may contain mistakes. Taste suggestions are not allergy guarantees. Some restaurant sites block automated access or use menus that cannot be extracted reliably. Photo clarity and PDF page count affect processing time. Exchange rates are approximate, with their source and date shown.
 

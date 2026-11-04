@@ -44,3 +44,7 @@ yarn-error.log*
 # OS metadata
 .DS_Store
 !.env.example
+
+# Superseded local brand drafts
+/public/brand/dinevia-logo-concept.png
+/public/brand/dinevia-logo-global-concept.png

@@ -34,7 +34,7 @@ export async function downloadPublic(raw:string,redirects=0,deadline=Date.now()+
    // Pin the checked address at connection time, including every redirect.
    lookup:(_hostname,_options,callback)=>callback(null,selected.address,selected.family),
    family:selected.family,agent:false,method:options.method||'GET',
-   headers:{'User-Agent':'MenuPassport/0.1','Accept':'text/html,application/pdf;q=0.9,text/css,image/*;q=0.8,*/*;q=0.5','Accept-Encoding':'identity',...options.headers},
+   headers:{'User-Agent':'Dinevia/0.1','Accept':'text/html,application/pdf;q=0.9,text/css,image/*;q=0.8,*/*;q=0.5','Accept-Encoding':'identity',...options.headers},
   },res=>{
    if([301,302,303,307,308].includes(res.statusCode||0)&&res.headers.location){if(options.body||options.headers?.stoken){res.resume();reject(new Error('The restaurant menu service redirected unexpectedly.'));return;}res.resume();clearTimeout(timer);downloadPublic(new URL(res.headers.location,u).href,redirects+1,deadline).then(resolve,reject);return;}
    if(!res.statusCode||res.statusCode<200||res.statusCode>=300){res.resume();reject(new Error(`The website returned error ${res.statusCode}. Please check the menu link.`));return;}

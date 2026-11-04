@@ -20,7 +20,7 @@ Read every dish. Find your favorites. Feel at home at any table.
 
 **Muse Image 1.0 — experimental host path:** The code includes a separate workflow for replacing text inside a menu photograph while retaining its visual design. Spark reads the generated image back; numeric and text checks reject problematic results. This is an experimental extension, not the fast guest translation flow or a promise of pixel-identical output. Demonstrate it only with a verified recording of that workflow.
 
-**What is implemented outside the model:** Page fetching and cleanup, session access, response validation, caching, menu rendering and exchange-rate arithmetic are application code. Google Analytics integration is planned for the published site; it does not perform translation. Development assistance is distinct from the Meta models serving users. Do not claim Muse Code was used without evidence.
+**What is implemented outside the model:** Page fetching and cleanup, session access, response validation, caching, menu rendering and exchange-rate arithmetic are application code. Google Analytics measures sanitized page visits on the published site; it does not perform translation or receive menu contents and preferences. Development assistance is distinct from the Meta models serving users. Do not claim Muse Code was used without evidence.
 
 ## Why Meta matters
 
@@ -41,3 +41,11 @@ Our contribution is the complete guest workflow around those capabilities: extra
 | 2:50–3:00 | Dinevia closing | Local menu. Your language. Your preferences. Your currency. |
 
 Use an owned or fictional menu for public video assets. Record actual application behavior. Recheck all claims against the deployed version before submitting; deployment and video URLs are still pending.
+
+## Submission links
+
+- Product: https://dinevia-1opu.onrender.com
+- Public source: https://github.com/tamir77/dinevia
+- Demo video (2:34): https://dinevia-1opu.onrender.com/demo/dinevia-demo.mp4
+
+The video is also available through Watch demo on the homepage, with English captions.

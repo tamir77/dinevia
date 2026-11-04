@@ -1,0 +1,170 @@
+WEBVTT
+
+1
+00:00:00.090 --> 00:00:04.090
+You're in a new city, you find a restaurant you'd love to try.
+
+2
+00:00:04.090 --> 00:00:06.100
+But the menu leaves you guessing.
+
+3
+00:00:06.220 --> 00:00:07.680
+What is this dish?
+
+4
+00:00:07.780 --> 00:00:08.820
+Will I enjoy it?
+
+5
+00:00:09.220 --> 00:00:11.570
+And what does it really cost?
+
+6
+00:00:11.740 --> 00:00:16.920
+That's why we built Dinevia, menus without borders.
+
+7
+00:00:17.010 --> 00:00:19.560
+Let's start with a simple Romanian menu.
+
+8
+00:00:19.660 --> 00:00:23.920
+This is a fictional example processed by the real application.
+
+9
+00:00:23.920 --> 00:00:27.960
+A guest can paste a restaurant's menu link or upload a photograph.
+
+10
+00:00:28.050 --> 00:00:30.280
+No account is needed.
+
+11
+00:00:30.380 --> 00:00:32.380
+Choose a language and translate.
+
+12
+00:00:32.570 --> 00:00:37.120
+Meta Muse Spark reads the photograph, identifies the menu text, and
+
+13
+00:00:37.220 --> 00:00:40.260
+translates the dishes and descriptions.
+
+14
+00:00:40.370 --> 00:00:45.580
+Dinevia checks the response and keeps the original prices and portions.
+
+15
+00:00:45.780 --> 00:00:47.760
+Here is the result in English.
+
+16
+00:00:47.860 --> 00:00:52.320
+Tomato salad, its ingredients, and its original price.
+
+17
+00:00:52.420 --> 00:00:54.420
+Then chicken soup.
+
+18
+00:00:54.420 --> 00:00:57.990
+A clear menu you can actually use at the table.
+
+19
+00:00:58.140 --> 00:01:00.640
+The original is still available.
+
+20
+00:01:00.730 --> 00:01:05.940
+When the waiter comes over, you can show the exact dish you want.
+
+21
+00:01:06.130 --> 00:01:07.440
+Now make it personal.
+
+22
+00:01:07.530 --> 00:01:10.340
+Say you love tomatoes, but don't eat chicken.
+
+23
+00:01:10.530 --> 00:01:12.480
+Open for you.
+
+24
+00:01:12.570 --> 00:01:17.390
+The salad is a great match, while the soup conflicts with your preferences.
+
+25
+00:01:17.490 --> 00:01:21.960
+The explanation tells you why, and both dishes keep their prices and
+
+26
+00:01:21.960 --> 00:01:28.120
+descriptions. These are taste suggestions, not allergy guarantees.
+
+27
+00:01:28.220 --> 00:01:30.220
+Next, choose your currency.
+
+28
+00:01:30.410 --> 00:01:34.640
+Dinevia shows an approximate conversion beside the original price,
+
+29
+00:01:34.740 --> 00:01:37.280
+using published exchange rates.
+
+30
+00:01:37.370 --> 00:01:39.730
+The model doesn't invent a price.
+
+31
+00:01:39.900 --> 00:01:43.320
+Traveling with friends, switch the menu language.
+
+32
+00:01:43.410 --> 00:01:46.870
+The photograph only needs to be recognized once.
+
+33
+00:01:47.020 --> 00:01:51.320
+Translations are cached for reuse, and the interface follows the selected
+
+34
+00:01:51.320 --> 00:01:55.800
+language. Meta is central to this experience.
+
+35
+00:01:55.900 --> 00:02:00.860
+Muse Spark handles visual recognition, translation, and preference
+
+36
+00:02:00.860 --> 00:02:06.000
+reasoning. Our application adds source checks, numeric validation,
+
+37
+00:02:06.040 --> 00:02:09.370
+private guest sessions, and caching.
+
+38
+00:02:09.730 --> 00:02:14.920
+An experimental host workflow also uses Muse Image to explore preserving
+
+39
+00:02:14.920 --> 00:02:18.200
+a restaurant's original menu design.
+
+40
+00:02:18.290 --> 00:02:21.780
+We started with an everyday problem in Moldovan restaurants and built
+
+41
+00:02:21.780 --> 00:02:24.680
+for anyone eating somewhere new.
+
+42
+00:02:24.780 --> 00:02:30.880
+Dinevia, local menu, your language,
+your preferences, your currency.
