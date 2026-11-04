@@ -1,48 +1,63 @@
-# Menu Passport
+# Dinevia
 
-Restaurant menus translated by Meta AI while keeping the original PDF artwork and layout. Built for the Meta Global AI Developer Hackathon (November 2026).
+**Menus Without Borders**
 
-## What works
+Read every dish. Find your favorites. Feel at home at any table.
 
-- Restaurant workspace, using Sites' ChatGPT sign-in; every menu is owned by its creator.
-- Upload a text-based PDF (8 MB / 20 pages maximum), preserve its original file in R2, extract positioned text in the browser, and save the layout in D1.
-- Translate into 30 selectable languages using **Meta Muse Spark 1.3** through `https://api.meta.ai/v1/responses`.
-- Render original PDF artwork with text drawing suppressed, then draw translated text into the original text regions. Hebrew/Arabic use browser RTL text shaping.
-- Original/translated view, readable text view, original text corrections, reviewed publication/unpublication and downloadable QR codes.
-- Cache translations per menu revision and language. Numbers must match the source. Numeric-only blocks are never sent for translation.
-- Draft PDF and metadata require the owner. Published menu routes are anonymous-compatible. The hosting platform's audience setting must also permit public access before guests can open links without sign-in.
+Local menu. Your language. Your preferences. Your currency.
 
-## Current limits (prototype)
+## The product
 
-This is layout-preserving translation for **text PDFs**, not OCR or image inpainting. Scanned pages with no extractable text are rejected; writing embedded in photographs is unchanged. Embedded brand typography is approximated with serif/sans-serif replacement fonts. Long translations shrink to fit; small text is flagged and text view is available. Complex clipping, decorative fonts, mixed-direction and rotated layouts need per-document review. Translation quality is not guaranteed in all 30 languages.
+Dinevia turns a restaurant menu link or photograph into a clear text menu. Guests choose from English, German, Spanish, Italian, French, Chinese and Japanese. Dish descriptions and original prices stay together; the original remains available to show a waiter. “For you” adds explained taste suggestions without hiding prices. Approximate currency conversions come from published exchange rates. No guest account is required.
 
-The demo menu is fictional; its English demo translation is hand-authored and explicitly labeled. Uploaded menus use Meta. No dietary or allergen claims are generated.
+Built for the Meta Global AI Developer Hackathon, inspired by everyday experiences in Moldovan restaurants.
+
+## Built with Meta
+
+Meta Model API is the AI engine serving users. Server-side calls to Muse Spark 1.3 recognize menu photographs, translate menu text, and reason about ingredient preferences. Application code validates structured responses and numeric details, cleans page content, and caches recognition and translations. Currency arithmetic is deterministic.
+
+Muse Image 1.0 is used by an experimental host image-reconstruction workflow, with Spark reading the output back for validation. This is distinct from the fast guest flow. The public host page currently explains the restaurant vision; self-service restaurant onboarding is not enabled in this demo.
+
+See [the product and Meta explanation](docs/hackathon-submission.md).
 
 ## Run locally
 
-Node >=22.13 is required.
+Requirements: Node.js 24 or newer and a Meta Model API key with access to the models above.
 
 ```sh
-npm ci
-cp .env.example .dev.vars
-# Set MODEL_API_KEY in .dev.vars, without committing it.
-npm run build
-node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0000_clear_archangel.sql
-npm run dev -- --port 5178
+npm ci --include=dev --include=optional
 ```
 
-Apply each migration only once. Local development simulates login via `/signin-with-chatgpt?return_to=/` as `local_seedy`. Production uses real platform authentication; mock login is not bundled. Local and hosted databases are separate.
+Create an ignored `.dev.vars` file containing `MODEL_API_KEY=your_key_here`. Never commit this file.
 
-## Deploy / GitHub
+```sh
+npm run dev -- --port 5178 --hostname 127.0.0.1
+```
 
-The source is ready for a public GitHub repository. Never upload `.dev.vars`, `.env`, `.wrangler`, or restaurant PDFs from local runtime storage. `public/demo-menu.pdf` is a generated fictional fixture safe to share. PDF.js is Apache-2.0 licensed; its vendored worker license is retained in the file header.
+Open http://127.0.0.1:5178. The local development environment includes development-only authentication helpers; the public Render server blocks those endpoints.
 
-Hosting uses Sites / Cloudflare Workers + D1 + R2, with configuration in `.openai/hosting.json`. Configure `MODEL_API_KEY` as a production secret separately; local secrets are intentionally not uploaded. Start with a private preview, then enable public audience before sharing QR codes with restaurant guests. Publishing a menu inside the app does not change the platform's audience.
+## Render deployment
 
-## Security and costs
+Create a Node web service from this repository. Build: `npm ci --include=dev --include=optional && npm run build`. Start: `npm run start:render`. Set `NODE_VERSION=24` and the secret `MODEL_API_KEY` in Render environment settings. Health endpoint: `/healthz`.
 
-Owner checks cover all menu writes, revisions use optimistic concurrency, and mutations require the same Origin. Published guests may request only the finite language list; translations have per-language leases and a global atomic 5-starts/minute limit. These are prototype abuse controls, not a monthly spending cap. Use provider billing controls before a public launch. PDFs are stored server-side and rendered client-side; Meta receives extracted text, not the original PDF in this implementation. Incoming PDFs/layouts are size-limited and validated.
+This hackathon deployment runs the compiled Workers application using Miniflare, with local SQLite-backed D1 and R2-compatible storage. It is a single-instance prototype. On a free Render instance, uploaded menus and caches are temporary and can be lost on restart or redeployment. Persistent hosting requires a persistent disk or a managed storage migration.
 
-## Verification
+## Checks
 
-`npx tsc --noEmit` and `npm run build`. Browser checks cover demo original/English rendering, local login, PDF upload, actual Meta Hebrew translation, review/publication, QR generation and mobile layout. Real restaurant PDFs remain to be validated with the user.
+```sh
+npm test
+npx tsc --noEmit
+npm run build
+```
+
+Tests cover menu cleanup, numeric preservation, currency conversion, language selection, photo handling, preference evidence and interface copy. The demo uses an owned fictional menu processed by the actual application.
+
+## Privacy and limitations
+
+The Meta key stays on the server. Uploaded menu content and supplied preferences are sent to Meta when needed for translation or suggestions. Guest menus use private session access. Do not upload confidential documents.
+
+OCR and translations may contain mistakes. Taste suggestions are not allergy guarantees. Some restaurant sites block automated access or use menus that cannot be extracted reliably. Photo clarity and PDF page count affect processing time. Exchange rates are approximate, with their source and date shown.
+
+## Technology
+
+React 19, TypeScript, Vinext/Vite, Tailwind CSS, Cloudflare Workers APIs, Drizzle, PDF.js, Meta Model API, and published National Bank of Moldova exchange rates. Inter is included under its font license.

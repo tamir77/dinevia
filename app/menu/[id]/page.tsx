@@ -1,2 +1,3 @@
 import MenuView from './view';
-export default async function Page({params}:{params:Promise<{id:string}>}){const {id}=await params;return <MenuView id={id}/>}
+import {languages} from '../../../lib/menu';
+export default async function Page({params,searchParams}:{params:Promise<{id:string}>;searchParams:Promise<{lang?:string}>}){const [{id},query]=await Promise.all([params,searchParams]);const language=languages.some(([code])=>code===query?.lang)?query.lang!:'original';return <MenuView id={id} initialLanguage={language}/>}

@@ -1,0 +1,408 @@
+{
+  "en": {
+    "headline": [
+      "Local menu.",
+      "Your language.",
+      "Your preferences.",
+      "Your currency."
+    ],
+    "hostAction": "Explore Dinevia for restaurants",
+    "hostNote": "Your design. A welcome in every language.",
+    "hostTitle": "Your menu. Without borders.",
+    "hostIntro": "Give every guest a menu they can understand, with the look and feel of your restaurant. A scan of your QR code opens your menu in their language.",
+    "hostSteps": [
+      [
+        "Bring your own design",
+        "Start with your restaurant’s menu: a webpage, PDF or photo. Keep the original available alongside the translation."
+      ],
+      [
+        "Welcome more languages",
+        "Guests choose a language. Prepared translations can be reused, so the next guest can get straight to the menu."
+      ],
+      [
+        "Share one simple entry point",
+        "A restaurant menu page and QR code give guests a familiar way to open your menu at the table."
+      ]
+    ],
+    "hostPreview": "Try the guest experience",
+    "hostPreviewBody": "This demo lets you try menu translation without an account. Restaurant setup and public QR sharing are not available on this page yet.",
+    "hostCta": "Try a menu",
+    "faqTitle": "A little help before you order",
+    "faqLabel": "Frequently asked questions",
+    "faqIntro": "How Dinevia helps you feel at home at any table.",
+    "faq": [
+      [
+        "What can I translate?",
+        "Paste a restaurant menu link or add a clear photo. Links to PDFs are supported too. Some sites restrict access, and image-heavy PDFs can take longer; a clear photo of one page is a useful alternative."
+      ],
+      [
+        "Can I show the original to my waiter?",
+        "Yes. Open the original menu or expand the original text to point out the dish you want. The translated menu keeps the original prices and portions."
+      ],
+      [
+        "How does “For you” work?",
+        "Add what you like, prefer to avoid or do not eat. “For you” highlights dishes using the information available in the menu. Missing ingredients are not a guarantee of absence; check unclear details with your waiter."
+      ],
+      [
+        "Can I see prices in my currency?",
+        "Choose USD, EUR, GBP, CNY or JPY to see an approximate conversion beside the original price. If a photo only says “lei”, choose Moldova or Romania. The original menu price remains the price to check with the restaurant."
+      ],
+      [
+        "Why does the first translation take longer?",
+        "Dinevia first reads the menu, then translates it using Meta AI. Long or scanned menus take more work. Saved translations can be reused, and changing the display currency does not translate the menu again."
+      ],
+      [
+        "Do I need an account?",
+        "No account is needed to translate a menu as a guest. The restaurant page explains the design and QR-code experience; it has no registration form in this demo."
+      ]
+    ]
+  },
+  "de": {
+    "headline": [
+      "Lokale Speisekarte.",
+      "Deine Sprache.",
+      "Dein Geschmack.",
+      "Deine Währung."
+    ],
+    "hostAction": "Dinevia für Restaurants entdecken",
+    "hostNote": "Dein Design. Ein Willkommen in jeder Sprache.",
+    "hostTitle": "Deine Speisekarte. Ohne Grenzen.",
+    "hostIntro": "Gib jedem Gast eine verständliche Speisekarte im Stil deines Restaurants. Ein Scan des QR-Codes öffnet das Menü in der gewünschten Sprache.",
+    "hostSteps": [
+      [
+        "Dein eigenes Design",
+        "Beginne mit einer Webseite, einem PDF oder einem Foto deiner Speisekarte. Das Original bleibt neben der Übersetzung zugänglich."
+      ],
+      [
+        "Mehr Sprachen, mehr Gäste",
+        "Gäste wählen ihre Sprache. Gespeicherte Übersetzungen können für die nächsten Gäste wiederverwendet werden."
+      ],
+      [
+        "Ein einfacher Zugang",
+        "Eine Menüseite und ein QR-Code machen die Speisekarte direkt am Tisch zugänglich."
+      ]
+    ],
+    "hostPreview": "Das Gästeerlebnis ausprobieren",
+    "hostPreviewBody": "In dieser Demo kannst du Menüs ohne Konto übersetzen. Die Einrichtung für Restaurants und öffentliches Teilen per QR-Code sind auf dieser Seite noch nicht verfügbar.",
+    "hostCta": "Ein Menü ausprobieren",
+    "faqTitle": "Gut zu wissen, bevor du bestellst",
+    "faqLabel": "Häufige Fragen",
+    "faqIntro": "So hilft Dinevia dir, dich an jedem Tisch wohlzufühlen.",
+    "faq": [
+      [
+        "Was kann ich übersetzen?",
+        "Füge einen Link zur Speisekarte oder ein klares Foto hinzu. Auch PDF-Links werden unterstützt. Manche Websites blockieren den Zugriff; bildreiche PDFs brauchen länger. Ein deutliches Foto einer Seite ist eine gute Alternative."
+      ],
+      [
+        "Kann ich dem Service das Original zeigen?",
+        "Ja. Öffne das Originalmenü oder klappe den Originaltext auf, um das gewünschte Gericht zu zeigen. Originalpreise und Portionsgrößen bleiben erhalten."
+      ],
+      [
+        "Wie funktioniert „Für dich“?",
+        "Gib an, was du magst, lieber vermeidest oder nicht isst. Die Empfehlungen basieren auf den Angaben im Menü. Nicht aufgeführte Zutaten können trotzdem enthalten sein; frage bei Unklarheiten nach."
+      ],
+      [
+        "Kann ich Preise in meiner Währung sehen?",
+        "Wähle USD, EUR, GBP, CNY oder JPY für eine ungefähre Umrechnung neben dem Originalpreis. Steht auf einem Foto nur „lei“, wähle Moldau oder Rumänien. Maßgeblich ist der Preis des Restaurants."
+      ],
+      [
+        "Warum dauert die erste Übersetzung länger?",
+        "Dinevia liest zunächst das Menü und übersetzt es dann mit Meta AI. Lange oder gescannte Menüs brauchen mehr Zeit. Gespeicherte Übersetzungen sind wiederverwendbar; ein Währungswechsel erfordert keine neue Übersetzung."
+      ],
+      [
+        "Brauche ich ein Konto?",
+        "Als Gast kannst du Menüs ohne Konto übersetzen. Die Restaurantseite erläutert das Design- und QR-Code-Konzept; diese Demo enthält kein Registrierungsformular."
+      ]
+    ]
+  },
+  "es": {
+    "headline": [
+      "Menú local.",
+      "Tu idioma.",
+      "Tus preferencias.",
+      "Tu moneda."
+    ],
+    "hostAction": "Descubre Dinevia para restaurantes",
+    "hostNote": "Tu diseño. Una bienvenida en cada idioma.",
+    "hostTitle": "Tu menú. Sin fronteras.",
+    "hostIntro": "Ofrece a cada comensal un menú que entienda, con la identidad de tu restaurante. Al escanear el código QR, podrá abrir el menú en su idioma.",
+    "hostSteps": [
+      [
+        "Conserva tu diseño",
+        "Empieza con una página web, un PDF o una foto de tu menú. El original sigue disponible junto a la traducción."
+      ],
+      [
+        "Da la bienvenida en más idiomas",
+        "Cada comensal elige su idioma. Las traducciones guardadas se pueden reutilizar para los siguientes visitantes."
+      ],
+      [
+        "Una forma sencilla de entrar",
+        "Una página de menú y un código QR facilitan el acceso desde la mesa."
+      ]
+    ],
+    "hostPreview": "Prueba la experiencia del comensal",
+    "hostPreviewBody": "Esta demo permite traducir menús sin cuenta. La configuración para restaurantes y el uso compartido público por QR todavía no están disponibles en esta página.",
+    "hostCta": "Probar un menú",
+    "faqTitle": "Antes de pedir, resolvemos tus dudas",
+    "faqLabel": "Preguntas frecuentes",
+    "faqIntro": "Así te ayuda Dinevia a sentirte como en casa en cualquier mesa.",
+    "faq": [
+      [
+        "¿Qué puedo traducir?",
+        "Pega un enlace al menú o añade una foto nítida. También se admiten enlaces a PDF. Algunas webs restringen el acceso y los PDF con muchas imágenes tardan más. Una foto clara de una página es una buena alternativa."
+      ],
+      [
+        "¿Puedo mostrar el original al camarero?",
+        "Sí. Abre el menú original o despliega el texto original para señalar el plato que quieres. Se conservan los precios y las cantidades originales."
+      ],
+      [
+        "¿Cómo funciona «Para ti»?",
+        "Indica lo que te gusta, prefieres evitar o no comes. Las sugerencias se basan en la información del menú. Que un ingrediente no aparezca no garantiza su ausencia; consulta las dudas con el camarero."
+      ],
+      [
+        "¿Puedo ver los precios en mi moneda?",
+        "Elige USD, EUR, GBP, CNY o JPY para ver una conversión aproximada junto al precio original. Si la foto solo indica «lei», selecciona Moldavia o Rumanía. Confirma siempre el precio original con el restaurante."
+      ],
+      [
+        "¿Por qué tarda más la primera traducción?",
+        "Dinevia primero lee el menú y después lo traduce con Meta AI. Los menús largos o escaneados requieren más tiempo. Las traducciones guardadas se reutilizan; cambiar de moneda no vuelve a traducir el menú."
+      ],
+      [
+        "¿Necesito una cuenta?",
+        "No necesitas cuenta para traducir un menú como comensal. La página para restaurantes explica la propuesta de diseño y códigos QR; esta demo no incluye un formulario de registro."
+      ]
+    ]
+  },
+  "it": {
+    "headline": [
+      "Menu locale.",
+      "La tua lingua.",
+      "I tuoi gusti.",
+      "La tua valuta."
+    ],
+    "hostAction": "Scopri Dinevia per i ristoranti",
+    "hostNote": "Il tuo design. Un benvenuto in ogni lingua.",
+    "hostTitle": "Il tuo menu. Senza confini.",
+    "hostIntro": "Offri a ogni ospite un menu comprensibile, con lo stile del tuo ristorante. Basta scansionare il codice QR per aprirlo nella propria lingua.",
+    "hostSteps": [
+      [
+        "Parti dal tuo design",
+        "Usa una pagina web, un PDF o una foto del tuo menu. L’originale resta disponibile accanto alla traduzione."
+      ],
+      [
+        "Accogli più lingue",
+        "Gli ospiti scelgono la lingua. Le traduzioni salvate possono essere riutilizzate per i visitatori successivi."
+      ],
+      [
+        "Un accesso semplice",
+        "Una pagina dedicata al menu e un codice QR permettono agli ospiti di aprirlo direttamente al tavolo."
+      ]
+    ],
+    "hostPreview": "Prova l’esperienza degli ospiti",
+    "hostPreviewBody": "Questa demo permette di tradurre un menu senza account. La configurazione per i ristoranti e la condivisione pubblica tramite QR non sono ancora disponibili su questa pagina.",
+    "hostCta": "Prova un menu",
+    "faqTitle": "Qualche risposta prima di ordinare",
+    "faqLabel": "Domande frequenti",
+    "faqIntro": "Come Dinevia ti aiuta a sentirti a casa a ogni tavolo.",
+    "faq": [
+      [
+        "Che cosa posso tradurre?",
+        "Incolla un link al menu o aggiungi una foto nitida. Sono supportati anche i link ai PDF. Alcuni siti limitano l’accesso e i PDF ricchi di immagini richiedono più tempo. Una foto chiara di una pagina è una buona alternativa."
+      ],
+      [
+        "Posso mostrare l’originale al cameriere?",
+        "Sì. Apri il menu originale o espandi il testo originale per indicare il piatto che desideri. Prezzi e porzioni originali vengono conservati."
+      ],
+      [
+        "Come funziona «Per te»?",
+        "Indica ciò che ami, preferisci evitare o non mangi. I suggerimenti si basano sulle informazioni del menu. Un ingrediente non elencato potrebbe comunque esserci: chiedi al cameriere in caso di dubbi."
+      ],
+      [
+        "Posso vedere i prezzi nella mia valuta?",
+        "Scegli USD, EUR, GBP, CNY o JPY per vedere una conversione indicativa accanto al prezzo originale. Se una foto riporta solo «lei», scegli Moldavia o Romania. Verifica il prezzo originale con il ristorante."
+      ],
+      [
+        "Perché la prima traduzione richiede più tempo?",
+        "Dinevia legge prima il menu e poi lo traduce con Meta AI. I menu lunghi o scansionati richiedono più lavoro. Le traduzioni salvate si possono riutilizzare; cambiare valuta non avvia una nuova traduzione."
+      ],
+      [
+        "Serve un account?",
+        "Non serve un account per tradurre un menu come ospite. La pagina per i ristoranti presenta l’esperienza con design e codici QR; questa demo non include un modulo di registrazione."
+      ]
+    ]
+  },
+  "fr": {
+    "headline": [
+      "Menu local.",
+      "Votre langue.",
+      "Vos préférences.",
+      "Votre devise."
+    ],
+    "hostAction": "Découvrir Dinevia pour les restaurants",
+    "hostNote": "Votre design. Un accueil dans chaque langue.",
+    "hostTitle": "Votre menu. Sans frontières.",
+    "hostIntro": "Offrez à chaque convive un menu compréhensible, à l’image de votre restaurant. Un scan du code QR ouvre le menu dans sa langue.",
+    "hostSteps": [
+      [
+        "Gardez votre identité",
+        "Partez d’une page web, d’un PDF ou d’une photo de votre menu. L’original reste accessible à côté de la traduction."
+      ],
+      [
+        "Accueillez plus de langues",
+        "Les convives choisissent leur langue. Les traductions enregistrées peuvent être réutilisées pour les prochains visiteurs."
+      ],
+      [
+        "Un accès tout simple",
+        "Une page de menu et un code QR permettent d’ouvrir le menu directement à table."
+      ]
+    ],
+    "hostPreview": "Essayez l’expérience des convives",
+    "hostPreviewBody": "Cette démo permet de traduire un menu sans compte. La configuration pour les restaurants et le partage public par QR ne sont pas encore disponibles sur cette page.",
+    "hostCta": "Essayer un menu",
+    "faqTitle": "Quelques réponses avant de commander",
+    "faqLabel": "Questions fréquentes",
+    "faqIntro": "Comment Dinevia vous aide à vous sentir chez vous à chaque table.",
+    "faq": [
+      [
+        "Que puis-je traduire ?",
+        "Collez un lien vers un menu ou ajoutez une photo nette. Les liens vers des PDF sont aussi acceptés. Certains sites limitent l’accès et les PDF riches en images prennent plus de temps. Une photo nette d’une page est une bonne alternative."
+      ],
+      [
+        "Puis-je montrer l’original au serveur ?",
+        "Oui. Ouvrez le menu original ou dépliez le texte original pour montrer le plat souhaité. Les prix et portions d’origine sont conservés."
+      ],
+      [
+        "Comment fonctionne « Pour vous » ?",
+        "Indiquez ce que vous aimez, préférez éviter ou ne mangez pas. Les suggestions utilisent les informations du menu. Un ingrédient non mentionné peut être présent : demandez au serveur en cas de doute."
+      ],
+      [
+        "Puis-je voir les prix dans ma devise ?",
+        "Choisissez USD, EUR, GBP, CNY ou JPY pour afficher une conversion approximative à côté du prix original. Si une photo indique seulement « lei », choisissez la Moldavie ou la Roumanie. Vérifiez le prix d’origine auprès du restaurant."
+      ],
+      [
+        "Pourquoi la première traduction est-elle plus longue ?",
+        "Dinevia lit d’abord le menu, puis le traduit avec Meta AI. Les menus longs ou numérisés demandent plus de travail. Les traductions enregistrées sont réutilisables ; changer de devise ne relance pas la traduction."
+      ],
+      [
+        "Ai-je besoin d’un compte ?",
+        "Aucun compte n’est nécessaire pour traduire un menu en tant que convive. La page restaurants présente le concept de design et de QR code ; cette démo ne comporte pas de formulaire d’inscription."
+      ]
+    ]
+  },
+  "zh": {
+    "headline": [
+      "当地菜单。",
+      "你的语言。",
+      "你的口味。",
+      "你的货币。"
+    ],
+    "hostAction": "了解餐厅版 Dinevia",
+    "hostNote": "保留你的设计，用多种语言欢迎客人。",
+    "hostTitle": "你的菜单，不分国界。",
+    "hostIntro": "让每位客人都能读懂菜单，同时保留餐厅的独特风格。扫描二维码，即可用自己的语言查看菜单。",
+    "hostSteps": [
+      [
+        "从原有设计开始",
+        "使用餐厅菜单网页、PDF 或照片。翻译后仍可查看原始菜单。"
+      ],
+      [
+        "用更多语言迎接客人",
+        "客人选择所需语言。已保存的翻译可以重复使用，让下一位客人更快查看。"
+      ],
+      [
+        "简单的访问方式",
+        "专属菜单页面和二维码，让客人在餐桌旁轻松打开菜单。"
+      ]
+    ],
+    "hostPreview": "体验客人使用流程",
+    "hostPreviewBody": "本演示无需注册即可翻译菜单。此页面暂未开放餐厅设置和二维码公开分享功能。",
+    "hostCta": "试着翻译菜单",
+    "faqTitle": "点餐前，你可能想了解",
+    "faqLabel": "常见问题",
+    "faqIntro": "了解 Dinevia 如何让你在每一张餐桌前都自在点餐。",
+    "faq": [
+      [
+        "可以翻译什么？",
+        "粘贴餐厅菜单链接或添加清晰的照片，也支持 PDF 链接。部分网站限制访问，图片较多的 PDF 处理时间较长。拍摄一页清晰的菜单照片也是不错的选择。"
+      ],
+      [
+        "可以向服务员展示原文吗？",
+        "可以。打开原始菜单或展开原文，就能指出想点的菜。翻译菜单保留原始价格和分量。"
+      ],
+      [
+        "“为你推荐”如何工作？",
+        "添加你喜欢、尽量避免或不吃的食物。推荐根据菜单已有信息生成。菜单未列出某种食材不代表一定不含它；有疑问时请向服务员确认。"
+      ],
+      [
+        "可以用自己的货币查看价格吗？",
+        "选择 USD、EUR、GBP、CNY 或 JPY，即可在原价旁查看参考换算。如果照片只写了“lei”，请选择摩尔多瓦或罗马尼亚。实际价格请以餐厅确认的原价为准。"
+      ],
+      [
+        "为什么第一次翻译比较慢？",
+        "Dinevia 先读取菜单，再使用 Meta AI 翻译。较长的菜单和扫描菜单需要更多处理时间。已保存的翻译可重复使用；切换货币不会重新翻译菜单。"
+      ],
+      [
+        "需要注册账号吗？",
+        "客人翻译菜单无需账号。餐厅页面介绍保留设计与二维码菜单的使用方式，本演示不提供注册表单。"
+      ]
+    ]
+  },
+  "ja": {
+    "headline": [
+      "現地のメニュー。",
+      "あなたの言語。",
+      "あなたの好み。",
+      "あなたの通貨。"
+    ],
+    "hostAction": "レストラン向け Dinevia を見る",
+    "hostNote": "お店のデザインで、さまざまな言語のおもてなし。",
+    "hostTitle": "お店のメニューに、国境はいらない。",
+    "hostIntro": "お店らしいデザインを保ちながら、どのお客様にもわかりやすいメニューを。QRコードを読み取ると、希望の言語でメニューを開けます。",
+    "hostSteps": [
+      [
+        "お店のデザインから",
+        "メニューのウェブページ、PDF、写真を使います。翻訳とあわせて元のメニューも確認できます。"
+      ],
+      [
+        "多くの言語でおもてなし",
+        "お客様が言語を選びます。保存済みの翻訳は再利用できるため、次のお客様もスムーズに読めます。"
+      ],
+      [
+        "テーブルから簡単にアクセス",
+        "専用のメニューページとQRコードで、席からすぐにメニューを開けます。"
+      ]
+    ],
+    "hostPreview": "ゲストの体験を試す",
+    "hostPreviewBody": "このデモでは、アカウントなしでメニューを翻訳できます。このページでは、レストラン設定とQRコードによる一般公開はまだ利用できません。",
+    "hostCta": "メニューを試す",
+    "faqTitle": "注文前の、ちょっとした疑問に",
+    "faqLabel": "よくある質問",
+    "faqIntro": "Dinevia で、どのテーブルでも安心してメニューを読めるように。",
+    "faq": [
+      [
+        "何を翻訳できますか？",
+        "メニューのリンクを貼り付けるか、鮮明な写真を追加してください。PDFへのリンクにも対応しています。一部のサイトはアクセスを制限しており、画像の多いPDFは時間がかかります。1ページをはっきり撮った写真も便利です。"
+      ],
+      [
+        "店員さんに原文を見せられますか？",
+        "はい。元のメニューを開くか、原文を展開して、注文したい料理を示せます。元の価格と分量は保持されます。"
+      ],
+      [
+        "「あなた向け」はどう使いますか？",
+        "好きなもの、なるべく避けたいもの、食べないものを登録します。提案はメニューの情報に基づきます。記載のない食材が含まれる場合もあるので、不明点は店員さんに確認してください。"
+      ],
+      [
+        "自分の通貨で価格を見られますか？",
+        "USD、EUR、GBP、CNY、JPYを選ぶと、元の価格の横に目安の換算額が表示されます。写真に「lei」としかない場合は、モルドバかルーマニアを選びます。実際の価格はお店にご確認ください。"
+      ],
+      [
+        "最初の翻訳に時間がかかるのはなぜですか？",
+        "Dinevia はまずメニューを読み取り、Meta AI で翻訳します。長いメニューやスキャン画像は処理に時間がかかります。保存済みの翻訳は再利用でき、通貨の変更で再翻訳は行いません。"
+      ],
+      [
+        "アカウントは必要ですか？",
+        "ゲストとしてメニューを翻訳する場合は不要です。レストラン向けページではデザインとQRコードの仕組みを紹介しており、このデモに登録フォームはありません。"
+      ]
+    ]
+  }
+}

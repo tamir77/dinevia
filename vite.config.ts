@@ -1,4 +1,6 @@
 import vinext from "vinext";
+import {phoneLink} from "./scripts/vite/phone-link";
+import {menuUrlImport} from "./scripts/vite/menu-url-import";
 import { defineConfig } from "vite";
 import hostingConfig from "./.openai/hosting.json";
 import { readExecutionProfile } from "./scripts/execution-profile.mjs";
@@ -53,6 +55,8 @@ export default defineConfig(async ({ command }) => {
         : {}),
     },
     plugins: [
+      phoneLink(),
+      menuUrlImport(),
       vinext(),
       sites({ mockAuth: !managedLinux }),
       connectorPreview(),

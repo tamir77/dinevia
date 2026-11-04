@@ -1,0 +1,2 @@
+const closeLabels:Record<string,string>={en:'Close',he:'סגירה',ro:'Închide',ru:'Закрыть',uk:'Закрити',de:'Schließen',fr:'Fermer',es:'Cerrar',it:'Chiudi',pt:'Fechar',ar:'إغلاق',zh:'关闭',ja:'閉じる',ko:'닫기',tr:'Kapat',pl:'Zamknij',nl:'Sluiten',el:'Κλείσιμο',bg:'Затвори',cs:'Zavřít',hu:'Bezárás',sv:'Stäng',da:'Luk',fi:'Sulje',hi:'बंद करें',id:'Tutup',vi:'Đóng',th:'ปิด',ka:'დახურვა',hy:'Փակել'};
+export const closeLabel=(language:string)=>closeLabels[language.split('-')[0]]||closeLabels.en;

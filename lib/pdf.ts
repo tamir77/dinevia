@@ -3,7 +3,7 @@ export async function pdfEngine(){const pdf=await import('pdfjs-dist');pdf.Globa
 export async function readLayout(file:File,language:string):Promise<Layout>{
  const pdf=await pdfEngine(),task=pdf.getDocument({data:await file.arrayBuffer()}),doc=await task.promise;
  try{
- if(doc.numPages>20)throw new Error('В первой версии поддерживаются PDF до 20 страниц. Разделите меню на части.');
+ if(doc.numPages>20)throw new Error('PDFs can have up to 20 pages. Please split a larger menu into smaller files.');
  const pages:Layout['pages']=[];
  for(let p=1;p<=doc.numPages;p++){
   const page=await doc.getPage(p),viewport=page.getViewport({scale:1}),content=await page.getTextContent();
@@ -23,9 +23,35 @@ export async function readLayout(file:File,language:string):Promise<Layout>{
   for(const b of blocks){const a=merged.at(-1),gap=a?b.x-a.x-a.width:100;
    if(a&&Math.abs(a.y-b.y)<1.5&&Math.abs(a.fontSize-b.fontSize)<1&&Math.abs(a.angle)<0.01&&Math.abs(b.angle)<0.01&&gap>=-1&&gap<Math.min(12,b.fontSize)&&/\p{L}/u.test(a.text)&&/\p{L}/u.test(b.text)){a.text+=(gap>1?' ':'')+b.text;a.width=b.x+b.width-a.x;}else merged.push({...b});
   }
-  if(merged.length<2)throw new Error(`Страница ${p} — скан или изображение без текстового слоя. Для точного сохранения оформления сейчас нужен текстовый PDF. Этот файл требует отдельного OCR-режима.`);
+  if(merged.length===0)throw new Error(`Page ${p} is a scan without selectable text. Upload a text-based PDF, or use the photo option for an image of the menu.`);
   pages.push({width:viewport.width,height:viewport.height,blocks:merged.sort((a,b)=>Math.abs(a.y-b.y)>3?a.y-b.y:a.x-b.x)});
  }
  return {language,pages};
+ }finally{await task.destroy()}
+}
+
+// Guest PDFs may contain full-page images or outlined letters instead of text.
+export async function readGuestPdf(file:File,language:string,sourceUrl:string|undefined,progress:(done:number,total:number)=>void):Promise<Layout>{
+ const pdf=await pdfEngine(),task=pdf.getDocument({data:await file.arrayBuffer()}),doc=await task.promise;
+ try{
+  if(doc.numPages>20)throw Error('PDFs can have up to 20 pages.');
+  const contents=await Promise.all(Array.from({length:doc.numPages},async(_,i)=>(await (await doc.getPage(i+1)).getTextContent()).items));
+  if(contents.every(items=>items.some(item=>'str' in item&&item.str.trim()))){return {...await readLayout(file,language),sourceUrl}}
+  const {scannedPage}=await import('./scanned-pdf'),{runBatches}=await import('./batch-work');
+  const pages:Layout['pages']=new Array(doc.numPages);let done=0;progress(0,doc.numPages);
+  await runBatches(Array.from({length:doc.numPages},(_,i)=>i),3,async index=>{
+   const page=await doc.getPage(index+1),base=page.getViewport({scale:1}),viewport=page.getViewport({scale:1800/Math.max(base.width,base.height)});
+   const canvas=document.createElement('canvas');canvas.width=Math.ceil(viewport.width);canvas.height=Math.ceil(viewport.height);
+   try{
+    await page.render({canvas,canvasContext:canvas.getContext('2d')!,viewport}).promise;
+    const blob=await new Promise<Blob>((resolve,reject)=>canvas.toBlob(b=>b?resolve(b):reject(Error('Could not prepare PDF page.')),'image/jpeg',.9));
+    const form=new FormData();form.set('file',blob,'page.jpg');form.set('width',String(canvas.width));form.set('height',String(canvas.height));
+    const response=await fetch('/api/pdf-page',{method:'POST',body:form}),result=await response.json() as {menu?:import('./photo').PhotoMenu|null;error?:string};
+    if(!response.ok)throw Error(result.error||'Could not read this PDF page.');
+    pages[index]=result.menu?scannedPage(result.menu,index):{width:canvas.width,height:canvas.height,blocks:[]};progress(++done,doc.numPages);
+   }finally{canvas.width=0;canvas.height=0;page.cleanup()}
+  });
+  if(!pages.some(p=>p.blocks.length))throw Error('No readable menu text was found.');
+  return {language,pages,sourceUrl};
  }finally{await task.destroy()}
 }

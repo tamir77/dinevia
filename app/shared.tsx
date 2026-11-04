@@ -1,0 +1,5 @@
+'use client';
+export async function api(path:string,options?:RequestInit){const r=await fetch('/api/'+path,options);const d:any=await r.json().catch(()=>({error:r.status===413?'This page or file is too large.':'Something went wrong. Please try again.'}));if(!r.ok)throw new Error(d.error||'Something went wrong. Please try again.');return d}
+export const body=(data:unknown,method='POST')=>({method,headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+export function Brand(){return <a className="brand" href="/" aria-label="Dinevia home"><img className="brand-logo" src="/brand/dinevia-logo-two-tone.png" width={2160} height={720} alt="Dinevia — Menus Without Borders"/></a>}
+export function Header({active}:{active?:string}){return <header className="topbar"><Brand/><nav aria-label="Main navigation"><a aria-current={active==='guest'?'page':undefined} className={active==='guest'?'active':''} href="/translate">For Guests</a><a aria-current={active==='restaurant'?'page':undefined} className={active==='restaurant'?'active':''} href="/restaurants">For Hosts</a></nav></header>}
