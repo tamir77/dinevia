@@ -56,5 +56,15 @@ const server=createServer(async(req,res)=>{
 });
 server.requestTimeout=300000;
 server.listen(port,process.env.RENDER?'0.0.0.0':'127.0.0.1',()=>console.log('Dinevia is ready'));
+// A read-only availability check helps distinguish deployment configuration
+// problems from an unreadable customer photo. Never log keys or menu content.
+if(process.env.MODEL_API_KEY)void (async()=>{
+ try{
+  const response=await fetch('https://api.meta.ai/v1/models',{headers:{Authorization:`Bearer ${process.env.MODEL_API_KEY.trim()}`},signal:AbortSignal.timeout(15000)});
+  const result=await response.json();
+  const models=Array.isArray(result.data)?result.data.map(model=>String(model.id).slice(0,100)):[];
+  console.info('[meta-availability]',JSON.stringify({status:response.status,models}));
+ }catch{console.info('[meta-availability] Provider availability check failed');}
+})();
 async function shutdown(){server.close();await runtime.dispose();process.exit(0);}
 process.on('SIGTERM',shutdown);process.on('SIGINT',shutdown);
