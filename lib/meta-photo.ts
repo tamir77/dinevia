@@ -7,7 +7,13 @@ async function call(model:string,input:unknown,timeout=120000){
  const key=(env as unknown as Record<string,string>).MODEL_API_KEY?.trim();if(!key)throw new Error('Connect a Meta API key to read and translate photos.');
  const started=Date.now();if(process.env.NODE_ENV!=='production')console.info('[menu-photo]',model,'started');
  const response=await fetch('https://api.meta.ai/v1/responses',{method:'POST',headers:{Authorization:`Bearer ${key}`,'Content-Type':'application/json'},signal:AbortSignal.timeout(timeout),body:JSON.stringify({model,input,...(model==='muse-spark-1.3'?{reasoning:{effort:'low'},max_output_tokens:12000}:{})})});
- if(!response.ok)throw new Error(`Meta could not process this photo (${response.status}). Please try again later.`);
+ if(!response.ok){
+  const detail:any=await response.json().catch(()=>null);
+  // Log provider diagnostics on the server only, without credentials or inputs.
+  const clean=(value:unknown)=>String(value||'').split(key).join('[redacted]').slice(0,400);
+  console.error('[meta-photo-provider]',JSON.stringify({status:response.status,code:clean(detail?.error?.code),type:clean(detail?.error?.type),message:clean(detail?.error?.message)}));
+  throw new Error(`Meta could not process this photo (${response.status}). Please try again later.`);
+ }
  const result:any=await response.json();if(process.env.NODE_ENV!=='production')console.info('[menu-photo]',model,'completed in',Math.round((Date.now()-started)/1000),'seconds');if(result.status!=='completed')throw new Error('Meta could not finish processing your photo. Try a clearer image.');return result;
 }
 function readJson(result:any){const raw=result.output?.flatMap((o:any)=>o.content||[]).filter((c:any)=>c.type==='output_text').map((c:any)=>c.text||'').join('')||'';try{return JSON.parse(raw.replace(/^```(?:json)?\s*/,'').replace(/\s*```$/,''))}catch{throw new Error('Could not read the Meta response. Try a clearer photo.')}}
