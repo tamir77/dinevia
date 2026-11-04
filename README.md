@@ -18,7 +18,7 @@ Built for the Meta Global AI Developer Hackathon, inspired by everyday experienc
 
 ## Built with Meta
 
-Meta Model API is the AI engine serving users. Server-side calls to Muse Spark 1.3 recognize menu photographs, translate menu text, and reason about ingredient preferences. Application code validates structured responses and numeric details, cleans page content, and caches recognition and translations. Currency arithmetic is deterministic.
+Meta Model API is the AI engine serving users. Server-side calls to Muse Spark 1.3 (with a Muse Spark 1.1 compatibility retry only when Meta reports the model unavailable) recognize menu photographs, translate menu text, and reason about ingredient preferences. Application code validates structured responses and numeric details, cleans page content, and caches recognition and translations. Currency arithmetic is deterministic.
 
 Muse Image 1.0 is used by an experimental host image-reconstruction workflow, with Spark reading the output back for validation. This is distinct from the fast guest flow. The public host page currently explains the restaurant vision; self-service restaurant onboarding is not enabled in this demo.
 

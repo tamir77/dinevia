@@ -16,7 +16,7 @@ Read every dish. Find your favorites. Feel at home at any table.
 
 ## How we use Meta
 
-**Meta Model API / Muse Spark 1.3:** The application calls the Responses endpoint from the server. Spark reads restaurant-menu photos into structured text blocks, translates extracted menu content into the selected language, and reasons about guest food preferences using the dish name, description and culinary context. Recommendations include explanations tied to source text. The application validates the returned structure and evidence, preserves prices and quantities, and labels uncertainty instead of treating inferred recipes as verified ingredients.
+**Meta Model API / Muse Spark 1.3 (with a Muse Spark 1.1 compatibility retry only when Meta reports the model unavailable):** The application calls the Responses endpoint from the server. Spark reads restaurant-menu photos into structured text blocks, translates extracted menu content into the selected language, and reasons about guest food preferences using the dish name, description and culinary context. Recommendations include explanations tied to source text. The application validates the returned structure and evidence, preserves prices and quantities, and labels uncertainty instead of treating inferred recipes as verified ingredients.
 
 **Muse Image 1.0 — experimental host path:** The code includes a separate workflow for replacing text inside a menu photograph while retaining its visual design. Spark reads the generated image back; numeric and text checks reject problematic results. This is an experimental extension, not the fast guest translation flow or a promise of pixel-identical output. Demonstrate it only with a verified recording of that workflow.
 

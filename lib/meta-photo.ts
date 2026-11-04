@@ -1,3 +1,4 @@
+import {metaRequest} from './meta-request.ts';
 import {env} from 'cloudflare:workers';
 import {imageMime,numberTokens,type PhotoMenu} from './photo';
 import {parsePhotoReading} from './photo-reading';
@@ -6,7 +7,7 @@ function dataUrl(bytes:Uint8Array){const type=imageMime(bytes);if(!type)throw ne
 async function call(model:string,input:unknown,timeout=120000){
  const key=(env as unknown as Record<string,string>).MODEL_API_KEY?.trim();if(!key)throw new Error('Connect a Meta API key to read and translate photos.');
  const started=Date.now();if(process.env.NODE_ENV!=='production')console.info('[menu-photo]',model,'started');
- const response=await fetch('https://api.meta.ai/v1/responses',{method:'POST',headers:{Authorization:`Bearer ${key}`,'Content-Type':'application/json'},signal:AbortSignal.timeout(timeout),body:JSON.stringify({model,input,...(model==='muse-spark-1.3'?{reasoning:{effort:'low'},max_output_tokens:12000}:{})})});
+ const response=await metaRequest(key,{model,input,...(model==='muse-spark-1.3'?{reasoning:{effort:'low'},max_output_tokens:12000}:{})},AbortSignal.timeout(timeout));
  if(!response.ok){
   const detail:any=await response.json().catch(()=>null);
   // Log provider diagnostics on the server only, without credentials or inputs.
