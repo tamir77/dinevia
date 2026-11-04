@@ -6,6 +6,7 @@ import {readFile,mkdir,readdir} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {Readable} from 'node:stream';
 import {importUrlHandler} from './vite/menu-url-import.ts';
+import {publicDemo} from './public-demo.mjs';
 
 const port=Number(process.env.PORT||5180);
 const origin=new URL(process.env.RENDER_EXTERNAL_URL||`http://127.0.0.1:${port}`).origin;
@@ -31,6 +32,7 @@ let imports=0;
 const importer=importUrlHandler(origin);
 const server=createServer(async(req,res)=>{
  try{
+  if(await publicDemo(req,res))return;
   const path=new URL(req.url||'/',origin).pathname;
   if(path==='/healthz'){await db.prepare('SELECT 1').first();res.writeHead(200,{'Content-Type':'text/plain'});res.end('ok');return;}
   if(['/signin-with-chatgpt','/signout-with-chatgpt','/callback','/api/phone-link'].includes(path)||path.startsWith('/api/account')){res.writeHead(404);res.end('Not available');return;}
