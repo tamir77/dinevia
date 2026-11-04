@@ -1,0 +1,5 @@
+import {z} from 'zod';
+export const blockSchema=z.object({id:z.string().max(80),text:z.string().min(1).max(4000),x:z.number().finite(),y:z.number().finite(),width:z.number().positive(),height:z.number().positive(),fontSize:z.number().positive(),fontFamily:z.string().max(100),color:z.string().regex(/^#[0-9a-f]{6}$/i),angle:z.number().finite()});
+export const layoutSchema=z.object({language:z.string().min(2).max(10),pages:z.array(z.object({width:z.number().positive().max(15000),height:z.number().positive().max(15000),blocks:z.array(blockSchema).max(1500)})).min(1).max(20)}).refine(d=>d.pages.reduce((n,p)=>n+p.blocks.length,0)<=1000,'Maximum 1000 text blocks').refine(d=>d.pages.reduce((n,p)=>n+p.blocks.reduce((m,b)=>m+b.text.length,0),0)<=100000,'Maximum 100000 characters');
+export type Layout=z.infer<typeof layoutSchema>;
+export type Translated={language:string;texts:Record<string,string>};
